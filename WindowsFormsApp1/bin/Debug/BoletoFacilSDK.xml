@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BoletoFacilSDK</name>
+    </assembly>
+    <members>
+        <member name="T:BoletoFacilSDK.BoletoFacil">
+            <summary>
+            BoletoFacil is an HTTP Client for connecting to Boleto Facil's API.
+            </summary>
+        </member>
+        <member name="T:BoletoFacilSDK.BoletoFacilBase">
+            <summary>
+            Base class for main SDK class (<see cref="T:BoletoFacilSDK.BoletoFacil"/>), which 
+            contains utility and common methods used throughout all API request methods.
+            </summary>
+        </member>
+        <member name="M:BoletoFacilSDK.BoletoFacilBase.SetProxy(System.String,System.String,System.String)">
+            <summary>
+            Set proxy address, send only the address with http://ip, even for https connections
+            </summary>
+            <param name="proxyAddress">Proxy address, even for https connections, use http</param>
+            <param name="proxyUser"></param>
+            <param name="proxyPassword"></param>
+        </member>
+    </members>
+</doc>
