@@ -24,7 +24,7 @@ o Botão Rodar Procedure: Este botão é habilitado uma vez que a atualização 
 o Botão Limpar: Realiza a limpeza da visualização do grid.
 
 
-## 2 – Requisição:
+## 2 – Requisição
 No projeto as classes cApi e ParametrosAPI ficam responsáveis por realizar a requisição.
 Para que a requisição seja feita deve ser passar como parâmetro a classe de ParametrosAPI, nesta classe temos as seguintes variáveis do tipo REQUIRED para a API:
 ``` c#
