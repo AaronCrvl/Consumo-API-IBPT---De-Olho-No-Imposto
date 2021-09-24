@@ -43,16 +43,11 @@ namespace IBPT
         private async void bbtnAtualizar_Click(object sender, EventArgs e)
         {
             try
-            {
-                
+            {                
                 bbtnLimpar.Visible = false;                
-
                 var dadosLista = lst.CarregarTodos();
                 ProdutoIBPT p = new ProdutoIBPT();                
-                p.AtualizaTabelaIBPT(dadosLista.Tables[0], pbar, NaoConcluido, Concluido);
-
-                bbtnRodaProcedure.Visible = true;
-                bbtnLimpar.Visible = true;                
+                p.AtualizaTabelaIBPT(dadosLista.Tables[0], pbar, NaoConcluido, Concluido, bbtnRodaProcedure, bbtnLimpar, bbtnAtualizar, bbtnRodaProcedure);               
             }
             catch (Exception ex)
             {                

@@ -36,7 +36,7 @@ namespace IBPT
             try
             {
                 StringBuilder sql = new StringBuilder();
-                sql.Append("SELECT TOP 20000 ");
+                sql.Append("SELECT TOP 30000 ");
                 sql.Append(" CI.NR_CODIGO_NCM");
                 sql.Append(", ");
                 sql.Append(" CI.TX_DESCRICAO_NCM");
