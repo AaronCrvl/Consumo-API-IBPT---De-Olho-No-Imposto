@@ -18,10 +18,10 @@ Sumário:
   
 
 - Botões Principais da Aplicação:
-Botão Retornar Produtos: Realiza uma chamada no banco na tabela CalculoImpostos e preenche o grid com seus dados.
-Botão Atualizar: Realiza a chamada na API para todos os produtos da tabela e preenche a tabela temporária.
-Botão Rodar Procedure: Este botão é habilitado uma vez que a atualização na tabela temporária é concluído,  este faz com que a Procedure PR_AtualizaTabelasIBPT seja executada.
-Botão Limpar: Realiza a limpeza da visualização do grid.
+o Botão Retornar Produtos: Realiza uma chamada no banco na tabela CalculoImpostos e preenche o grid com seus dados.
+o Botão Atualizar: Realiza a chamada na API para todos os produtos da tabela e preenche a tabela temporária.
+o Botão Rodar Procedure: Este botão é habilitado uma vez que a atualização na tabela temporária é concluído,  este faz com que a Procedure PR_AtualizaTabelasIBPT seja executada.
+o Botão Limpar: Realiza a limpeza da visualização do grid.
 
 
 2 – Requisição:
@@ -47,8 +47,8 @@ Foram criadas duas classes base para a tratar os dados retornados pela API, send
 4 - Instruções para Execução
 
 O  programa é bem intuitivo e a lógica abaixo deve ser seguida para seu uso coreto:
-1 – Retornar os produtos para povoar a tabela.
-2 – Atualizar para realizar a chamada da API e povoar a tabela temporária.
-3 – Rodar a Procedure para povoar a tabela principal.
+o 1 – Retornar os produtos para povoar a tabela.
+o 2 – Atualizar para realizar a chamada da API e povoar a tabela temporária.
+o 3 – Rodar a Procedure para povoar a tabela principal.
 
 OBS: O botão de rodar a procedure só estará visível após a atualização ser feita.
