@@ -45,6 +45,7 @@ namespace IBPT
                 List<ProdutoIBPTDTO> lista = new List<ProdutoIBPTDTO>();
 
                 #region Inicia Propriedades do Forms
+                    
                 pb.Maximum = 0;
                 pb.Visible = true;
                 pb.Maximum = Tabela.Rows.Count;
@@ -55,6 +56,7 @@ namespace IBPT
                 NaoConcluiu.Visible = true;
                 NaoConcluiu.BackColor = System.Drawing.Color.Yellow;
                 Concluiu.BackColor = System.Drawing.Color.White;
+                
                 #endregion
 
                 foreach (DataRow linha in Tabela.Rows)
@@ -62,7 +64,8 @@ namespace IBPT
                     pb.Increment(1);
                     ParametrosAPI param = new ParametrosAPI(linha);
                     ProdutoIBPTDTO produto = new ProdutoIBPTDTO();
-
+                    
+                    //Chama da API para preencher o objeto
                     var retorno = await chamadaAPI.Get(param);
                     if (retorno != null)
                     {
@@ -75,9 +78,11 @@ namespace IBPT
                         lista.Add(produto);
                     }
                 }
+                // Aqui os objetos são inseridos na tabela temporária, direcionar conforme demanda.
                 InsertTabela(lista);
 
                 #region Tratativa de Propriedades do Forms
+                    
                 pb.Dispose();
                 Atualizar.Enabled = true;
                 Retornar.Enabled = true;
@@ -85,6 +90,7 @@ namespace IBPT
                 bbtnLimpar.Visible = true;
                 NaoConcluiu.BackColor = System.Drawing.Color.White;
                 Concluiu.BackColor = System.Drawing.Color.LightGreen;
+                
                 #endregion   
             }
             catch (Exception e)
@@ -104,23 +110,17 @@ namespace IBPT
                     foreach (var produto in lista)
                     {
                         StringBuilder sql = new StringBuilder();
+                        //Inserção dos dados na tabela temporária
                         sql.Append(" INSERT INTO CalculoImpostosTemp ");
-                        //sql.Append(" " +
-                        //    " ( " +
-                        //    "NR_CODIGO_NCM, NR_PERCENTUAL_NACIONALFEDERAL, " +
-                        //    "NR_PERCENTUAL_IMPORTADOSFEDERAL, " +
-                        //    "NR_PERCENTUAL_ESTADUAL, " +
-                        //    "NR_PERCENTUAL_MUNICIPAL, " +
-                        //    "UF" +
-                        //    " ) ");
                         sql.Append(" VALUES ");
                         sql.Append(" ( ");
-                        sql.Append("3" + produto.Codigo.ToString() + ", ");
-                        sql.Append("3" + produto.Nacional.ToString() + ", ");
-                        sql.Append("3" + produto.Importado.ToString() + ", ");
-                        sql.Append("3" + produto.Estadual.ToString() + ", ");
-                        sql.Append("3" + produto.Municipal.ToString() + ", ");
-                        sql.Append("'" + produto.UF.ToString() + "'");
+                        sql.Append(produto.Codigo.ToString() + ", ");
+                        sql.Append(produto.Nacional.ToString() + ", ");
+                        sql.Append(produto.Importado.ToString() + ", ");
+                        sql.Append(produto.Estadual.ToString() + ", ");
+                        sql.Append(produto.Municipal.ToString() + ", ");
+                        sql.Append("'" + produto.UF.ToString() + "'" + ", ");
+                        sql.Append("'" + produto.Versao.ToString() + "'");
                         sql.Append(" ) ");
                         Framework.Banco.SQL.Transactional_Executar_Query_Gravacao(sql.ToString());
                     }
@@ -132,7 +132,7 @@ namespace IBPT
                 }
             }
         }
-
+        // Método alternativo, não utilizado.
         void UpdateTabela(List<ProdutoIBPTDTO> lista)
         {
             using (Transacao t = new Transacao())
@@ -166,6 +166,7 @@ namespace IBPT
                 }
             }
         }
+        
         #endregion
     }
 
