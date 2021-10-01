@@ -35,6 +35,7 @@ namespace IBPT
                     }
                     if (response.StatusCode == HttpStatusCode.NotFound)
                     {
+                        //Não registra quando o produto não foi encontrado.
                         return null;
                     }
                     else
