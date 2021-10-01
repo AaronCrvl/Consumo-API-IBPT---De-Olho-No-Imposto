@@ -13,6 +13,9 @@ Sumário:
 3.	Implementação
 4.	Instruções para Execução
 
+Introdução:
+Este programa foi desenvolvido em WidnowsForms utilizando a linguagem C#.
+O mesmo parte de um princípio em que se tem uma base de dados existente onde podem ser retornados todos os códigos de produtos, a partir disso a requisição é feita linha a linha atualizando um objeto que irá preencher uma tabela temporária que posteriormente será chamada através de uma procedure para atualização da base de dados.
 
 ## 1 – Estrutura
   
