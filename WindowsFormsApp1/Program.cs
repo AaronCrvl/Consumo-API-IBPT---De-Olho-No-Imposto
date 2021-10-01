@@ -18,7 +18,8 @@ namespace FormsIBPT
         {            
             try
             {
-                Framework.Banco.SQL.Inicializar("Password=P@ssw0rd; User ID=wgcapp; Initial Catalog=IBPT; Data Source=WGCSERVERSQL01; connection timeout=600;");
+                //Inicie aqui a conexão com banco de dados. ========================================================================
+                Framework.Banco.SQL.Inicializar("Password=P@ssw0rd; User ID=; Initial Catalog=; Data Source=; connection timeout=;");
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Visualizacao());
