@@ -2,7 +2,7 @@
  
 Requisição API IBPT
 
-Aaron de Carvalho Balbino 
+Aaron
 Contato: carvalhosins@gmail.com
 
 
